@@ -45,7 +45,7 @@
 &none           &kp Q      &kp W         &kp E         &kp R   &kp T                                    &kp Y          &kp U   &kp I      &kp O    &lt 3 P        &none
 &none           &mt LCMD A &kp S         &kp D         &kp F   &kp G                                    &kp H          &kp J   &kp K      &kp L    &mt RCMD ENTER &none
 &none           &mt LSHIFT Z &kp X       &kp C         &kp V   &kp B        &none          &none        &kp N          &kp M   &kp COMMA  &kp DOT  &mt RSHIFT FSLH &none
-&none           &lt 4 K_COPY &mt LCTRL K_PASTE &kp LEFT_ALT &lt 1 INT6 &lt 2 SPACE  &lt 3 TAB      &kp ENTER    &kp INT5       &none      &none    &bootloader    &kp ESC
+&none           &lt 4 K_COPY &mt LCTRL K_PASTE &kp LEFT_ALT &lt 1 INT6 &lt 2 SPACE  &lt 3 TAB      &kp ENTER    &kp INT5       &none      &none    &bootloader    &lt 2 ESC
             >;
         };
 
@@ -74,11 +74,11 @@
         layer_3 {
             label = "MOUSE";
             bindings = <
-&none   &none      &none      &none      &none      &none                                    &none         &none        &none        &none         &none     &none
+&none   &kp K_SLEEP &none      &none      &none      &none                                    &none         &none        &none        &none         &none     &none
 &none   &trans     &trans     &msc SCRL_UP &trans     &trans                                 &kp F4        &kp LC(LEFT) &kp LC(UP)   &kp LC(RIGHT) &trans    &none
 &none   &trans     &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &kp LC(LEFT)                &kp LC(RIGHT) &mkp LCLK    &mkp RCLK    &trans        &trans    &none
 &none   &trans     &trans     &trans     &trans     &trans     &none          &none          &trans        &kp LG(LBKT) &kp LG(R)    &kp LG(RBKT)  &trans    &none
-&none   &kp K_SLEEP &trans    &trans     &trans     &trans     &trans         &trans         &trans        &trans       &none        &none         &trans    &none
+&none   &bootloader &trans    &trans     &trans     &trans     &trans         &trans         &trans        &trans       &none        &none         &trans    &none
             >;
         };
 
