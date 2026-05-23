@@ -73,7 +73,7 @@
             label = "MOUSE";
             bindings = <
 &none   &none      &none      &none      &none      &none                                    &none         &none        &none        &none         &none     &none
-&none   &kp K_SLEEP &trans    &msc SCRL_UP &trans     &trans                                 &kp LS(GLOBE(A)) &kp LC(LEFT) &kp LC(UP)   &kp LC(RIGHT) &trans    &none
+&none   &kp K_SLEEP &trans    &msc SCRL_UP &trans     &trans                                 &kp C_LAUNCHPAD &kp LC(LEFT) &kp LC(UP)   &kp LC(RIGHT) &trans    &none
 &none   &trans     &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &kp LC(LEFT)                &kp LC(RIGHT) &mkp LCLK    &mkp RCLK    &trans        &trans    &none
 &none   &trans     &trans     &trans     &trans     &trans     &none          &none          &trans        &kp LG(LBKT) &kp LG(R)    &kp LG(RBKT)  &trans    &none
 &none   &bootloader &trans    &trans     &trans     &trans     &trans         &trans         &trans        &bootloader  &none        &none         &none
