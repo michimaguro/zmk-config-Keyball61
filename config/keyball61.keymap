@@ -83,13 +83,3 @@
         };
     };
 };
-
-/* 右手側（トラックボール搭載側）だけにCPI設定を適用するZMKの作法 */
-#if IS_ENABLED(CONFIG_KEYBALL_RIGHT) || defined(KEYBALL61_RIGHT)
-&pinctrl {
-    trackball_input: trackball_input {
-        device = <&trackball>;
-        input-cpi = <2000>; 
-    };
-};
-#endif
