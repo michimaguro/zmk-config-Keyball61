@@ -3,7 +3,6 @@
 #define FUN     2
 #define MOUSE   3
 #define SCROLL  4
-#define SNIPE   5
 
 #include <behaviors/mouse_keys.dtsi>
 #include <dt-bindings/zmk/mouse.h>
@@ -35,7 +34,7 @@
 &none           &kp Q      &kp W         &kp E         &kp R   &kp T                                    &kp Y          &kp U   &kp I      &kp O    &lt 3 P        &none
 &none           &mt LCMD A &kp S         &kp D         &kp F   &kp G                                    &kp H          &kp J   &kp K      &kp L    &mt RCMD ENTER &none
 &none           &mt LSHIFT Z &kp X       &kp C         &kp V   &kp B        &none          &none        &kp N          &kp M   &kp COMMA  &kp DOT  &mt RSHIFT FSLH &none
-&none           &lt 4 K_COPY &mt LCTRL K_PASTE &kp LEFT_ALT &lt 1 INT6 &lt 2 SPACE  &lt 3 TAB      &kp ENTER    &kp INT5       &none      &none    &bootloader    &kp ESC
+&none           &lt 4 K_COPY &mt LCTRL K_PASTE &kp LEFT_ALT &lt 1 INT6 &lt 2 SPACE  &lt 3 TAB      &kp DEL      &lt 1 INT5     &lt 2 ESC  &none    &none
             >;
         };
 
@@ -46,7 +45,7 @@
 &none   &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT                                &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR   &none
 &none   &kp MINUS  &kp TILDE  &kp UNDER  &kp INT3   &trans                                   &kp COLON  &kp SQT    &kp UP     &kp LBKT   &kp RBKT   &none
 &none   &kp EQUAL  &trans     &trans     &trans     &trans     &none          &none          &kp SEMI   &kp LEFT   &kp DOWN   &kp RIGHT  &kp BSLH   &none
-&none   &trans     &trans     &trans     &trans     &trans     &trans         &trans         &trans     &trans     &none      &none      &trans     &none
+&none   &trans     &trans     &trans     &trans     &trans     &trans         &trans         &trans     &trans     &trans     &none      &none
             >;
         };
 
@@ -56,8 +55,8 @@
 &none   &none      &none      &none      &none      &none                                    &none      &none      &none      &none      &none      &none
 &none   &kp LPAR   &kp N1     &kp N2     &kp N3     &kp RPAR                                 &none      &none      &none      &none      &none      &none
 &none   &kp PLUS   &kp N4     &kp N5     &kp N6     &kp ASTRK                                &none      &none      &kp UP     &none      &none      &none
-&none   &kp MINUS  &kp N7     &kp N8     &kp N9     &kp SLASH                                &none      &kp LEFT   &kp DOWN   &kp RIGHT  &none      &none
-&none   &kp COMMA  &kp DOT    &kp N0     &kp EQUAL  &trans     &none          &none          &trans     &trans     &none      &none      &trans     &none
+&none   &kp MINUS  &kp N7     &kp N8     &kp N9     &kp SLASH                                &none      &none      &none      &kp LEFT   &kp DOWN   &kp RIGHT
+&none   &none      &none      &kp COMMA  &kp DOT    &kp N0     &kp EQUAL      &none          &trans     &trans     &trans     &none      &none
             >;
         };
 
@@ -65,10 +64,10 @@
             label = "MOUSE";
             bindings = <
 &none   &none      &none      &none      &none      &none                                    &none         &none        &none        &none         &none     &none
-&none   &trans     &trans     &msc SCRL_UP &trans     &trans                                 &kp F4        &kp LC(LEFT) &kp LC(UP)   &kp LC(RIGHT) &trans    &none
+&none   &kp K_SLEEP &trans    &msc SCRL_UP &trans     &trans                                 &none         &kp LC(LEFT) &kp LC(UP)   &kp LC(RIGHT) &trans    &none
 &none   &trans     &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &kp LC(LEFT)                &kp LC(RIGHT) &mkp LCLK    &mkp RCLK    &trans        &trans    &none
 &none   &trans     &trans     &trans     &trans     &trans     &none          &none          &trans        &kp LG(LBKT) &kp LG(R)    &kp LG(RBKT)  &trans    &none
-&none   &kp K_SLEEP &trans    &trans     &trans     &trans     &trans         &trans         &trans        &trans       &none        &none         &trans    &none
+&none   &bootloader &trans    &trans     &trans     &trans     &trans         &trans         &trans        &bootloader  &none        &none         &none
             >;
         };
 
@@ -77,30 +76,9 @@
             bindings = <
 &none   &none      &none      &none      &none      &none                                    &none         &none        &none        &none         &none     &none
 &none   &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                                   &kp C_BRI_DN  &kp C_BRI_UP &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP &none
-&none   &kp F6     &kp F7     &kp F8     &kp F9     &kp F10                                  &trans        &trans       &trans       &trans        &trans    &none
-&none   &kp F11    &kp F12    &kp F13    &kp F14    &kp F15                                  &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4 &none
-&none   &trans     &trans     &trans     &trans     &trans     &none          &none          &trans        &trans       &none        &none         &bootloader  &none
-            >;
-        };
-
-        snipe_layer {
-            label = "SNIPE";
-            bindings = <
-&none   &none   &none   &none   &none   &none                   &none   &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none   &none                   &none   &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none   &none                   &none   &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none
-            >;
-        };
-
-        layer_7 {
-            bindings = <
-&none   &none   &none   &none   &none   &none                   &none   &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none   &none                   &none   &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none   &none                   &none   &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none
+&none   &kp F6     &kp F7     &kp F8     &kp F9     &kp F10                                  &trans        &trans       &trans       &trans        &bootloader  &none
+&none   &kp F11    &kp F12    &kp F13    &kp F14    &kp F15    &none          &none          &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4 &none
+&none   &trans     &trans     &trans     &trans     &trans     &none          &none          &trans        &bootloader  &none         &none         &none
             >;
         };
     };
