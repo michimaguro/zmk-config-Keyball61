@@ -45,7 +45,7 @@
 &none           &mt LSHIFT Z &kp X       &kp C         &kp V   &kp B        &none          &none        &kp N          &kp M   &kp COMMA  &kp DOT  &mt RSHIFT FSLH &none
 &none           &lt 4 K_COPY &mt LCTRL K_PASTE &kp LEFT_ALT &lt 1 INT6 &lt 2 SPACE  &lt 3 TAB      &kp DEL      &lt 1 INT5     &lt 2 ESC  &none    &none
             >;
-        }
+        };
 
 layer_1 {
             label = "NUM";
