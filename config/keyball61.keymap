@@ -12,6 +12,16 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+/* トラックボールのカーソル速度を大幅に引き上げる設定 */
+&pinctrl {
+    /* 基盤のデフォルトの読み取り解像度を2000 CPI（高速）に設定 */
+    trackball_input: trackball_input {
+        device = <&trackball>;
+        input-cpi = <2000>; 
+    };
+};
+
+
 &lt {
     tapping-term-ms = <240>;
     flavor = "balanced";
