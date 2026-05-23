@@ -14,13 +14,11 @@
 
 /* トラックボールのカーソル速度を大幅に引き上げる設定 */
 &pinctrl {
-    /* 基盤のデフォルトの読み取り解像度を2000 CPI（高速）に設定 */
     trackball_input: trackball_input {
         device = <&trackball>;
         input-cpi = <2000>; 
     };
 };
-
 
 &lt {
     tapping-term-ms = <240>;
@@ -74,11 +72,11 @@
         layer_3 {
             label = "MOUSE";
             bindings = <
-&none   &kp K_SLEEP &none      &none      &none      &none                                    &none         &none        &none        &none         &none     &none
-&none   &trans     &trans     &msc SCRL_UP &trans     &trans                                 &kp F4        &kp LC(LEFT) &kp LC(UP)   &kp LC(RIGHT) &trans    &none
+&none   &none      &none      &none      &none      &none                                    &none         &none        &none        &none         &none     &none
+&none   &kp K_SLEEP &trans    &msc SCRL_UP &trans     &trans                                 &kp F4        &kp LC(LEFT) &kp LC(UP)   &kp LC(RIGHT) &trans    &none
 &none   &trans     &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &kp LC(LEFT)                &kp LC(RIGHT) &mkp LCLK    &mkp RCLK    &trans        &trans    &none
 &none   &trans     &trans     &trans     &trans     &trans     &none          &none          &trans        &kp LG(LBKT) &kp LG(R)    &kp LG(RBKT)  &trans    &none
-&none   &bootloader &trans    &trans     &trans     &trans     &trans         &trans         &trans        &trans       &none        &none         &trans    &none
+&none   &bootloader &trans    &trans     &trans     &trans     &trans         &trans         &trans        &trans       &none        &none         &bootloader &none
             >;
         };
 
@@ -87,9 +85,9 @@
             bindings = <
 &none   &none      &none      &none      &none      &none                                    &none         &none        &none        &none         &none     &none
 &none   &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                                   &kp C_BRI_DN  &kp C_BRI_UP &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP &none
-&none   &kp F6     &kp F7     &kp F8     &kp F9     &kp F10                                  &trans        &trans       &trans       &trans        &bootloader  &none
+&none   &kp F6     &kp F7     &kp F8     &kp F9     &kp F10                                  &trans        &trans       &trans       &trans        &bootloader &none
 &none   &kp F11    &kp F12    &kp F13    &kp F14    &kp F15                                  &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4 &none
-&none   &trans     &trans     &trans     &trans     &trans     &none          &none          &trans        &trans       &none        &none         &bootloader  &bootloader
+&none   &trans     &trans     &trans     &trans     &trans     &none          &none          &trans        &trans       &none        &none         &bootloader  &none
             >;
         };
 
