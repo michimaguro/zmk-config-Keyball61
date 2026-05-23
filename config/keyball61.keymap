@@ -33,6 +33,15 @@
 };
 
 / {
+    /* macOS Tahoeの Launchpad（fn + shift + A）を一発発動させるマクロ定義 */
+    macros {
+        launchpad_macro: launchpad_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp GLOBE &kp LSHIFT>, <&macro_tap &kp A>, <&macro_release &kp GLOBE &kp LSHIFT>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -73,7 +82,7 @@ layer_1 {
             label = "MOUSE";
             bindings = <
 &none   &none      &none      &none      &none      &none                                    &none         &none        &none        &none         &none     &none
-&none   &kp K_SLEEP &trans    &msc SCRL_UP &trans     &trans                                 &kp LS(C_CAPTIVATE) &kp LC(LEFT) &kp LC(UP)   &kp LC(RIGHT) &trans    &none
+&none   &kp K_SLEEP &trans    &msc SCRL_UP &trans     &trans                                 &launchpad_macro &kp LC(LEFT) &kp LC(UP)   &kp LC(RIGHT) &trans    &none
 &none   &trans     &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &kp LC(LEFT)                &kp LC(RIGHT) &mkp LCLK    &mkp RCLK    &trans        &trans    &none
 &none   &trans     &trans     &trans     &trans     &trans     &none          &none          &trans        &kp LG(LBKT) &kp LG(R)    &kp LG(RBKT)  &trans    &none
 &none   &bootloader &trans    &trans     &trans     &trans     &trans         &trans         &trans        &bootloader  &none        &none         &none
